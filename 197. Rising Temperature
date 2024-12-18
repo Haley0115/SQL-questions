@@ -1,0 +1,8 @@
+select
+    y.id
+from
+    Weather x
+    left join 
+    Weather y on x.recordDate =  DATE_SUB(y.recordDate, INTERVAL 1 DAY)
+where
+    y.temperature > x.temperature;
